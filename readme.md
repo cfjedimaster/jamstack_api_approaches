@@ -1,0 +1,1 @@
+This repository is my code demo for an article I'm writing on JAMStack API approaches. I should probably write more here, but just read the article: <https://www.raymondcamden.com/2019/07/25/multiple-ways-of-api-integration-in-your-jamstack>
