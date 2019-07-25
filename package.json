@@ -1,0 +1,21 @@
+{
+  "name": "jamstack_api_approaches",
+  "version": "1.0.0",
+  "description": "This repository is my code demo for an article I'm writing on JAMStack API approaches. I should probably write more here, but just read the article: <https://www.raymondcamden.com/2019/07/25/multiple-ways-of-api-integration-in-your-jamstack>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+     "build":"netlify-lambda build functions"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cfjedimaster/jamstack_api_approaches.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cfjedimaster/jamstack_api_approaches/issues"
+  },
+  "homepage": "https://github.com/cfjedimaster/jamstack_api_approaches#readme"
+}
