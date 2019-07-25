@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-     "build":"netlify-lambda build functions"
+    "build": "netlify-lambda build functions"
   },
   "repository": {
     "type": "git",
@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/cfjedimaster/jamstack_api_approaches/issues"
   },
-  "homepage": "https://github.com/cfjedimaster/jamstack_api_approaches#readme"
+  "homepage": "https://github.com/cfjedimaster/jamstack_api_approaches#readme",
+  "dependencies": {
+    "netlify-lambda": "^1.5.0"
+  }
 }
