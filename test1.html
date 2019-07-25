@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="https://vuejs.org/js/vue.min.js"></script>
+	<title>SWAPI Example</title>
+</head>
+<body>
+
+<div id="app">
+	<h1>Star Wars Films</h1>
+	<ul>
+		<li v-for="film in films">{{film.title}}</li>
+	</ul>
+</div>
+
+<script>
+const app = new Vue({
+	el:'#app',
+	data: {
+		films:[]
+	},
+	created() {
+		fetch('https://swapi.co/api/films')
+		.then(res => res.json())
+		.then(res => {
+			this.films = res.results;
+		});
+	}
+});
+
+</script>
+
+</body>
+</html>
