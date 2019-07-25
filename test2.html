@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="https://vuejs.org/js/vue.min.js"></script>
+	<title>Moon Data</title>
+</head>
+<body>
+
+<div id="app">
+	<h1>Moon Data for Lafayette, LA</h1>
+	<ul>
+		<li v-for="result in results">
+			On {{result.time | formatDate}}, the moon will rise at {{result.moonRise}} and set at {{result.moonSet}}. It is in {{result.moonPhaseDesc}}. 
+		</li>
+	</ul>
+</div>
+
+<script>
+Vue.filter('formatDate', function(d) {
+	if(!window.Intl) return d;
+	return new Intl.DateTimeFormat('en-US').format(new Date(d));
+}); 
+
+const app = new Vue({
+	el:'#app',
+	data: {
+		results:[]
+	},
+	created() {
+		fetch('/.netlify/functions/get-moon')
+		.then(res => res.json())
+		.then(res => {
+			this.results = res.data;
+		});
+	}
+});
+
+</script>
+
+</body>
+</html>
